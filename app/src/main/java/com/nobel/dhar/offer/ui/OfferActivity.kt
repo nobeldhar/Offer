@@ -1,4 +1,4 @@
-package com.nobel.dhar.offer
+package com.nobel.dhar.offer.ui
 
 import android.os.Bundle
 import android.view.View
@@ -8,11 +8,13 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.nobel.dhar.offer.R
 import com.nobel.dhar.offer.persistence.Food
 import com.nobel.dhar.offer.ui.home.CustomClickListener
-import com.nobel.dhar.offer.ui.home.HomeFragmentDirections
+import com.nobel.dhar.offer.ui.home.FoodListFragmentDirections
+import dagger.android.support.DaggerAppCompatActivity
 
-class MainActivity : AppCompatActivity(), CustomClickListener,
+class OfferActivity : DaggerAppCompatActivity(), CustomClickListener,
     NavController.OnDestinationChangedListener {
 
     private lateinit var navController: NavController
@@ -20,7 +22,7 @@ class MainActivity : AppCompatActivity(), CustomClickListener,
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_offer)
         navView = findViewById(R.id.nav_view)
 
         navController = findNavController(R.id.nav_host_fragment)
@@ -31,7 +33,7 @@ class MainActivity : AppCompatActivity(), CustomClickListener,
     }
 
     override fun onFoodSelected(food: Food) {
-        val action = HomeFragmentDirections.actionNavigationHomeToFoodDetailsFragment(food.food_id)
+        val action = FoodListFragmentDirections.actionNavigationHomeToFoodDetailsFragment(food.food_id)
         navController.navigate(action)
     }
 
@@ -43,7 +45,7 @@ class MainActivity : AppCompatActivity(), CustomClickListener,
         when(destination.id){
             R.id.navigation_home -> navigationHome()
             R.id.navigation_dashboard -> navigationDashboard()
-            R.id.navigation_notifications-> navigationNotification()
+            R.id.navigation_notifications -> navigationNotification()
             R.id.navigation_food_details -> navigationFoodDetails()
         }
     }

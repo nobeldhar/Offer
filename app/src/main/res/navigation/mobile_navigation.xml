@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.nobel.dhar.offer.ui.home.HomeFragment"
+        android:name="com.nobel.dhar.offer.ui.home.FoodListFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_food_list" >
         <action
             android:id="@+id/action_navigation_home_to_foodDetailsFragment"
             app:destination="@id/navigation_food_details"

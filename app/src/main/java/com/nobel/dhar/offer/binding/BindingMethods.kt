@@ -1,4 +1,4 @@
-package com.nobel.dhar.offer
+package com.nobel.dhar.offer.binding
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

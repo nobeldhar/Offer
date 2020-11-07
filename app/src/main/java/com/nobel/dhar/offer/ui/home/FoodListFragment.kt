@@ -2,30 +2,31 @@ package com.nobel.dhar.offer.ui.home
 
 import android.content.Context
 import android.os.Bundle
-import android.telecom.Connection
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import com.nobel.dhar.offer.R
-import com.nobel.dhar.offer.databinding.FragmentHomeBinding
-import com.nobel.dhar.offer.persistence.Food
-import com.nobel.dhar.offer.persistence.FoodWithItems
+import com.nobel.dhar.offer.databinding.FragmentFoodListBinding
+import com.nobel.dhar.offer.factory.AppViewModelFactory
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
-class HomeFragment : Fragment() {
+class FoodListFragment : DaggerFragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
-    private lateinit var binding: FragmentHomeBinding
+    @Inject
+    lateinit var viewModelFactory: AppViewModelFactory
+    private val foodListViewModel by viewModels<FoodListViewModel> { viewModelFactory }
+    private lateinit var binding: FragmentFoodListBinding
     private lateinit var listener: CustomClickListener
     private lateinit var navController: NavController
 
@@ -35,15 +36,14 @@ class HomeFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
 
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home,container,false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_food_list,container,false)
         navController = NavHostFragment.findNavController(this)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        homeViewModel.allFoods.observe(viewLifecycleOwner, Observer {
+        foodListViewModel.allFoods.observe(viewLifecycleOwner, Observer {
             if (it.isNullOrEmpty()){
                 Toast.makeText(context, "Null", Toast.LENGTH_SHORT).show()
             }else {

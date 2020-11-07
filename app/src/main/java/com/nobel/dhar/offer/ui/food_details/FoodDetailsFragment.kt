@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -17,8 +18,11 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.nobel.dhar.offer.R
 import com.nobel.dhar.offer.databinding.FoodDetailsFragmentBinding
+import com.nobel.dhar.offer.ui.home.FoodListViewModel
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
-class FoodDetailsFragment : Fragment() {
+class FoodDetailsFragment : DaggerFragment() {
 
     companion object {
         fun newInstance() = FoodDetailsFragment()
@@ -27,7 +31,10 @@ class FoodDetailsFragment : Fragment() {
     private val TAG: String? = FoodDetailsFragment::class.simpleName
     val args: FoodDetailsFragmentArgs by navArgs()
     private lateinit var binding: FoodDetailsFragmentBinding
-    private lateinit var viewModel: FoodDetailsViewModel
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val viewModel by viewModels<FoodDetailsViewModel> { viewModelFactory }
     private lateinit var navController: NavController
 
     override fun onCreateView(
@@ -45,7 +52,6 @@ class FoodDetailsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(FoodDetailsViewModel::class.java)
         viewModel.getFoodById(args.FoodId).observe(viewLifecycleOwner, Observer {
 
             if (it.items.isNullOrEmpty()) {
