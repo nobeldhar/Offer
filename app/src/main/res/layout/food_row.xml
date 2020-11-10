@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="model"
@@ -14,6 +13,9 @@
     <androidx.cardview.widget.CardView
         android:onClick="@{()-> listener.onFoodSelected(model)}"
         android:layout_width="match_parent"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
+        android:layout_margin="10dp"
         android:layout_height="wrap_content">
         <LinearLayout
             android:padding="10dp"
@@ -31,6 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
+                    android:scaleType="fitXY"
                     android:src="@{model.image}"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"/>

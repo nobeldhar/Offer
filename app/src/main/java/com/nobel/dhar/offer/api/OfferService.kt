@@ -10,6 +10,6 @@ import retrofit2.http.Query
 
 interface OfferService {
 
-    @GET("5fa96caabd01877eecdbb953/1")
+    @GET("5fa96caabd01877eecdbb953/2")
     suspend fun fetchFoodList(@Header("secret-key") secretKey: String): Response<List<FoodWithItems>>
 }

@@ -63,25 +63,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:textSize="15sp"
+                        android:textSize="12sp"
                         android:text="Availability "
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <TextView
-                        android:textSize="15sp"
+                        android:textSize="12sp"
                         android:textColor="@android:color/holo_green_dark"
                         android:layout_width="wrap_content"
                         android:text="@{@string/availability(model.food.availability)}"
                         android:layout_height="wrap_content"/>
                     <TextView
                         android:layout_marginStart="10dp"
-                        android:textSize="15sp"
+                        android:textSize="12sp"
                         android:id="@+id/avail_text"
                         android:text="Offer Until "
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <TextView
-                        android:textSize="15sp"
+                        android:textSize="12sp"
                         android:textColor="@android:color/holo_green_dark"
                         android:id="@+id/avail"
                         android:layout_width="wrap_content"
@@ -105,23 +105,45 @@
                         android:layout_marginTop="25dp"
                         android:layout_width="100dp"
                         android:layout_height="1dp"/>
-                    <TextView
-                        android:text="@{model.food.restaurant}"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:layout_marginTop="25dp"
+                    <RelativeLayout
+                        android:layout_marginTop="20dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentStart="true"
+                            android:text="@{model.food.restaurant}"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentBottom="true"
+                            android:text="@{model.food.offer}"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="18sp"
+                            android:layout_marginTop="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <ImageView
+                            android:scaleType="centerCrop"
+                            android:src="@{model.food.offer_image}"
+                            android:layout_alignParentEnd="true"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"/>
+                    </RelativeLayout>
                     <View
                         android:background="@android:color/holo_green_dark"
-                        android:layout_marginTop="25dp"
+                        android:layout_marginTop="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"/>
                     <TextView
                         android:text="What is included"
                         android:layout_marginTop="25dp"
-                        android:layout_marginBottom="25dp"
+                        android:layout_marginBottom="20dp"
                         android:textStyle="bold"
                         android:textSize="20sp"
                         android:layout_width="match_parent"
@@ -132,6 +154,20 @@
                         tools:listitem="@layout/item_column"
                         setData="@{model.items}"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_marginTop="15dp"
+                        android:text="@{model.food.description}"
+                        android:textSize="15sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <Button
+                        android:layout_margin="5dp"
+                        android:elevation="5dp"
+                        android:padding="5dp"
+                        android:background="@drawable/border"
+                        android:text="More>>>"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 

@@ -26,7 +26,13 @@ class Food(
     @ColumnInfo(name = "location")
     val location: String,
     @ColumnInfo(name = "restaurant")
-    val restaurant: String
+    val restaurant: String,
+    @ColumnInfo(name = "offer")
+    val offer: String,
+    @ColumnInfo(name = "description")
+    val description: String,
+    @ColumnInfo(name = "offer_image")
+    val offer_image: String
 ){
 
 }

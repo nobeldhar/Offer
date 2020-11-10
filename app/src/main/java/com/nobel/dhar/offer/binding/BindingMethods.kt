@@ -10,7 +10,7 @@ import com.nobel.dhar.offer.ui.food_details.ItemAdapter
 fun setImageViewResource(imageView: ImageView, resource_name: String?) {
     val resources = imageView.context.resources
     resource_name?.let {
-        val resourceId = resources.getIdentifier(resource_name, "drawable", imageView.context.packageName)
+         val resourceId = resources.getIdentifier(resource_name, "drawable", imageView.context.packageName)
         imageView.setImageResource(resourceId) }
 
 }
