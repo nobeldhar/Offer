@@ -2,7 +2,7 @@
 
 <img align="left" src="https://github.com/nobeldhar/Offer/blob/master/assets/offer.jpg" width="200">
 <img align="center" src="https://github.com/nobeldhar/Offer/blob/master/assets/offer_details1.jpg" width="200">
-<img align="right" src="https://github.com/nobeldhar/Offer/blob/master/assets/offer_details2.jpg" width="200">
+<img src="https://github.com/nobeldhar/Offer/blob/master/assets/offer_details2.jpg" width="200">
 
 A Offer simple app that loads information to show one approach of using some of the best practices in Android Development. Including: 
  * MVVM
