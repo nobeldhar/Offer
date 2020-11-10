@@ -6,13 +6,10 @@ import com.nobel.dhar.offer.persistence.Food
 import com.nobel.dhar.offer.persistence.FoodDatabase
 import com.nobel.dhar.offer.persistence.FoodWithItems
 import com.nobel.dhar.offer.repositories.FoodRepository
+import com.nobel.dhar.offer.utils.Resource
 import javax.inject.Inject
 
 class FoodListViewModel@Inject constructor(private val repository: FoodRepository) : ViewModel() {
 
-
-    val allFoods: LiveData<List<FoodWithItems>?>
-    init {
-        allFoods = repository.allFoods
-    }
+    val allFoods = repository.getFoodList()
 }

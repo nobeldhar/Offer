@@ -6,6 +6,7 @@ import dagger.android.ContributesAndroidInjector
 @Suppress("unused")
 @Module
 abstract class OfferActivityModule {
+
     @ContributesAndroidInjector(modules = [FragmentBuilderModule::class])
     abstract fun contributeMainActivity(): OfferActivity
 }

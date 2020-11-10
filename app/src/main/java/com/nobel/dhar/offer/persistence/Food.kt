@@ -16,7 +16,7 @@ class Food(
     @ColumnInfo(name = "availability")
     val availability: String,
     @ColumnInfo(name = "image")
-    val image: Int,
+    val image: String,
     @ColumnInfo(name = "price")
     val price: String,
     @ColumnInfo(name = "rating")

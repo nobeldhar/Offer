@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.nobel.dhar.offer">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
     <application
         android:name=".OfferApp"
         android:allowBackup="true"

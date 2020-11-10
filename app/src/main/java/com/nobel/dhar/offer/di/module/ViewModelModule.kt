@@ -23,4 +23,7 @@ abstract class ViewModelModule {
     @ViewModelKey(FoodDetailsViewModel::class)
     abstract fun bindFoodDetailsViewModel(foodDetailsViewModel: FoodDetailsViewModel): ViewModel
 
+    @Binds
+    abstract fun bindViewModelFactory(factory: AppViewModelFactory): ViewModelProvider.Factory
+
 }

@@ -2,6 +2,7 @@ package com.nobel.dhar.offer.ui.home
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,10 +19,13 @@ import androidx.navigation.ui.NavigationUI
 import com.nobel.dhar.offer.R
 import com.nobel.dhar.offer.databinding.FragmentFoodListBinding
 import com.nobel.dhar.offer.factory.AppViewModelFactory
+import com.nobel.dhar.offer.utils.Resource
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
 class FoodListFragment : DaggerFragment() {
+
+    private val TAG = "FoodListFragment"
 
     @Inject
     lateinit var viewModelFactory: AppViewModelFactory
@@ -31,12 +35,12 @@ class FoodListFragment : DaggerFragment() {
     private lateinit var navController: NavController
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
 
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_food_list,container,false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_food_list, container, false)
         navController = NavHostFragment.findNavController(this)
         return binding.root
     }
@@ -44,18 +48,32 @@ class FoodListFragment : DaggerFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         foodListViewModel.allFoods.observe(viewLifecycleOwner, Observer {
-            if (it.isNullOrEmpty()){
-                Toast.makeText(context, "Null", Toast.LENGTH_SHORT).show()
-            }else {
-                binding.adapter = FoodAdapter(it, listener)
+            when (it.status) {
+                Resource.Status.SUCCESS -> {
+                    //binding.progressBar.visibility = View.GONE
+                    if (!it.data.isNullOrEmpty()) binding.adapter = FoodAdapter(it.data, listener)
+                }
+                Resource.Status.ERROR -> {
+                    Log.d(TAG, "onActivityCreated: " + it.message)
+                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                }
+
+                Resource.Status.LOADING ->
+                    Toast.makeText(requireContext(), "Loading", Toast.LENGTH_SHORT).show()
             }
+
         })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home,
+                R.id.navigation_dashboard,
+                R.id.navigation_notifications
+            )
+        )
         NavigationUI.setupWithNavController(binding.toolbarHome, navController, appBarConfiguration)
     }
 
@@ -65,7 +83,8 @@ class FoodListFragment : DaggerFragment() {
             listener = context
         } else {
             throw ClassCastException(
-                context.toString() + " must implement CustomClickListener.")
+                context.toString() + " must implement CustomClickListener."
+            )
         }
     }
 

@@ -1,13 +1,20 @@
 package com.nobel.dhar.offer.persistence
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 
 @Dao
 interface FoodDao {
+
+    suspend fun insertFoodWithItems(foodWithItemsList: List<FoodWithItems>) {
+        for(i in foodWithItemsList){
+            insertFood(i.food)
+            insertItems(items = i.items)
+        }
+    }
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertItem(vararg item: Item)
+    suspend fun insertItems(items: List<Item>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertFood(food: Food)
