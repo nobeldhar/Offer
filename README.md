@@ -1,16 +1,10 @@
 # Offer - Android Architecture Sample
 
-<div class="row">
-  <div class="column">
-    <img src="https://github.com/nobeldhar/Offer/blob/master/assets/offer.jpg" width="200">
-  </div>
-  <div class="column">
-    <img src="https://github.com/nobeldhar/Offer/blob/master/assets/offer_details1.jpg" width="200">
-  </div>
-  <div class="column">
-    <img src="https://github.com/nobeldhar/Offer/blob/master/assets/offer_details2.jpg" width="200">
-  </div>
-</div>
+<p float="left">
+  <img src="https://github.com/nobeldhar/Offer/blob/master/assets/offer.jpg" width="200">
+  <img src="https://github.com/nobeldhar/Offer/blob/master/assets/offer_details1.jpg" width="200">
+  <img src="https://github.com/nobeldhar/Offer/blob/master/assets/offer_details2.jpg" width="200">
+ </p>
 
 A Offer simple app that loads information to show one approach of using some of the best practices in Android Development. Including: 
  * MVVM
