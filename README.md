@@ -1,15 +1,21 @@
-# RickAndMorty - Android Architecture Sample
+# Offer - Android Architecture Sample
 
-<img align="right" src="https://github.com/sberoch/RickAndMorty-AndroidArchitectureSample/raw/master/assets/characters.jpg" width="200">
+<p float="left">
+  <img src="https://github.com/nobeldhar/Offer/blob/master/assets/offer.jpg" width="200">
+  <img src="https://github.com/nobeldhar/Offer/blob/master/assets/offer_details1.jpg" width="200">
+  <img src="https://github.com/nobeldhar/Offer/blob/master/assets/offer_details2.jpg" width="200">
+ </p>
 
-A Rick And Morty simple app that loads information from [The Rick and Morty API](https://rickandmortyapi.com/) to show one approach to using some of the best practices in Android Development. Including:  
- * ViewModel
- * LiveData
- * Hilt (for dependency injection)
+A Offer simple app that loads information to show one approach of using some of the best practices in Android Development. Including: 
+ * MVVM
+ * Single Activity Pattern
+ * Databinding
+ * Dagger (for dependency injection)
  * Kotlin Coroutines
  * Retrofit
  * Room
- * Navigation
+ * Caching
+ * Navigation Components
  
  ## You should also take a look at
  * [Guide to app architecture](https://developer.android.com/jetpack/guide)
