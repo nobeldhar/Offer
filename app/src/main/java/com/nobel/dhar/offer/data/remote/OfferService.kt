@@ -1,10 +1,8 @@
-package com.nobel.dhar.offer.api
+package com.nobel.dhar.offer.data.remote
 
-import com.nobel.dhar.offer.persistence.entities.Food
-import com.nobel.dhar.offer.persistence.entities.FoodWithItems
+import com.nobel.dhar.offer.data.local.entities.Food
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Header
 
 interface OfferService {
 

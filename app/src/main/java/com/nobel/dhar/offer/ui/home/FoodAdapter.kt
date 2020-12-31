@@ -7,8 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nobel.dhar.offer.BR
 import com.nobel.dhar.offer.R
 import com.nobel.dhar.offer.databinding.FoodRowBinding
-import com.nobel.dhar.offer.persistence.entities.Food
-import com.nobel.dhar.offer.persistence.entities.FoodWithItems
+import com.nobel.dhar.offer.data.local.entities.Food
 
 class FoodAdapter (val foodList: List<Food>, val listener: CustomClickListener):
     RecyclerView.Adapter<FoodAdapter.MyViewHolder>() {

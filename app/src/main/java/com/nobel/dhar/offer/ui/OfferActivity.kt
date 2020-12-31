@@ -8,7 +8,7 @@ import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.nobel.dhar.offer.R
-import com.nobel.dhar.offer.persistence.entities.Food
+import com.nobel.dhar.offer.data.local.entities.Food
 import com.nobel.dhar.offer.ui.home.CustomClickListener
 import com.nobel.dhar.offer.ui.home.FoodListFragmentDirections
 import dagger.android.support.DaggerAppCompatActivity

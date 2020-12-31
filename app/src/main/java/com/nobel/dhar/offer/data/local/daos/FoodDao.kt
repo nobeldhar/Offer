@@ -1,10 +1,8 @@
-package com.nobel.dhar.offer.persistence.daos
+package com.nobel.dhar.offer.data.local.daos
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.nobel.dhar.offer.persistence.entities.Food
-import com.nobel.dhar.offer.persistence.entities.FoodWithItems
-import com.nobel.dhar.offer.persistence.entities.Item
+import com.nobel.dhar.offer.data.local.entities.Food
 
 @Dao
 interface FoodDao {

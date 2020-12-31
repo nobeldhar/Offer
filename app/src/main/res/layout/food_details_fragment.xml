@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.nobel.dhar.offer.persistence.entities.Food" />
+            type="com.nobel.dhar.offer.data.local.entities.Food" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

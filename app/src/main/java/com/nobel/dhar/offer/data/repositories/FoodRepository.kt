@@ -1,7 +1,7 @@
-package com.nobel.dhar.offer.repositories
+package com.nobel.dhar.offer.data.repositories
 
-import com.nobel.dhar.offer.api.OfferRemoteDataSource
-import com.nobel.dhar.offer.persistence.daos.FoodDao
+import com.nobel.dhar.offer.data.remote.OfferRemoteDataSource
+import com.nobel.dhar.offer.data.local.daos.FoodDao
 import com.nobel.dhar.offer.utils.performGetOperation
 import javax.inject.Inject
 import javax.inject.Singleton

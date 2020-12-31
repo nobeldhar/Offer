@@ -3,7 +3,7 @@ package com.nobel.dhar.offer.binding
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.nobel.dhar.offer.persistence.entities.Item
+import com.nobel.dhar.offer.data.local.entities.Item
 import com.nobel.dhar.offer.ui.food_details.ItemAdapter
 
 @BindingAdapter("android:src")

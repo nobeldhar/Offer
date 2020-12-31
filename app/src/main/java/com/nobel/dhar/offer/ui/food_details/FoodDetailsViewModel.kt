@@ -1,7 +1,7 @@
 package com.nobel.dhar.offer.ui.food_details
 
 import androidx.lifecycle.ViewModel
-import com.nobel.dhar.offer.repositories.FoodRepository
+import com.nobel.dhar.offer.data.repositories.FoodRepository
 import javax.inject.Inject
 
 class FoodDetailsViewModel

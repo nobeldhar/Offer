@@ -1,7 +1,5 @@
-package com.nobel.dhar.offer.persistence.entities
+package com.nobel.dhar.offer.data.local.entities
 
-import android.widget.ImageView
-import androidx.databinding.BindingAdapter
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey

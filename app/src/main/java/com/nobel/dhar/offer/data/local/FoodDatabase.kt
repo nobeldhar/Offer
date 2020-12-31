@@ -1,12 +1,11 @@
-package com.nobel.dhar.offer.persistence
+package com.nobel.dhar.offer.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.nobel.dhar.offer.persistence.converters.FoodConverter
-import com.nobel.dhar.offer.persistence.daos.FoodDao
-import com.nobel.dhar.offer.persistence.entities.Food
-import com.nobel.dhar.offer.persistence.entities.Item
+import com.nobel.dhar.offer.data.local.converters.FoodConverter
+import com.nobel.dhar.offer.data.local.daos.FoodDao
+import com.nobel.dhar.offer.data.local.entities.Food
 
 @Database(entities = [Food::class], version = 1, exportSchema = false)
 @TypeConverters(value = [(FoodConverter::class)])

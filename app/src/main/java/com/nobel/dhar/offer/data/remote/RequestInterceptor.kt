@@ -1,4 +1,4 @@
-package com.nobel.dhar.offer.api
+package com.nobel.dhar.offer.data.remote
 
 import okhttp3.Interceptor
 import okhttp3.Request

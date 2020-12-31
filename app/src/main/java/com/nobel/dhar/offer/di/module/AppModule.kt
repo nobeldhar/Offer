@@ -8,12 +8,10 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.nobel.dhar.offer.api.OfferRemoteDataSource
-import com.nobel.dhar.offer.api.OfferService
-import com.nobel.dhar.offer.api.RequestInterceptor
-import com.nobel.dhar.offer.persistence.daos.FoodDao
-import com.nobel.dhar.offer.persistence.FoodDatabase
-import com.nobel.dhar.offer.repositories.FoodRepository
+import com.nobel.dhar.offer.data.remote.OfferService
+import com.nobel.dhar.offer.data.remote.RequestInterceptor
+import com.nobel.dhar.offer.data.local.daos.FoodDao
+import com.nobel.dhar.offer.data.local.FoodDatabase
 import dagger.Module
 import dagger.Provides
 import kotlinx.coroutines.CoroutineScope

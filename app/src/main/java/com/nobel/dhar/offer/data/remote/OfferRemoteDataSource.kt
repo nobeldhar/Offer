@@ -1,4 +1,4 @@
-package com.nobel.dhar.offer.api
+package com.nobel.dhar.offer.data.remote
 
 import javax.inject.Inject
 import javax.inject.Singleton

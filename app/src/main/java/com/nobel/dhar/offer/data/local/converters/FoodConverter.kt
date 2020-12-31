@@ -1,9 +1,9 @@
-package com.nobel.dhar.offer.persistence.converters
+package com.nobel.dhar.offer.data.local.converters
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.nobel.dhar.offer.persistence.entities.Item
+import com.nobel.dhar.offer.data.local.entities.Item
 
 class FoodConverter {
     @TypeConverter

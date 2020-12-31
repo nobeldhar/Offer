@@ -1,4 +1,4 @@
-package com.nobel.dhar.offer.api
+package com.nobel.dhar.offer.data.remote
 
 import com.nobel.dhar.offer.utils.Resource
 import retrofit2.Response
