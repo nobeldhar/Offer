@@ -5,7 +5,7 @@
     <data>
         <variable
             name="model"
-            type="com.nobel.dhar.offer.persistence.Food" />
+            type="com.nobel.dhar.offer.persistence.entities.Food" />
         <variable
             name="listener"
             type="com.nobel.dhar.offer.ui.home.CustomClickListener" />

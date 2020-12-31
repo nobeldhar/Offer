@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nobel.dhar.offer.BR
 import com.nobel.dhar.offer.R
 import com.nobel.dhar.offer.databinding.ItemColumnBinding
-import com.nobel.dhar.offer.persistence.Item
+import com.nobel.dhar.offer.persistence.entities.Item
 
 class ItemAdapter(val itemList: List<Item>): RecyclerView.Adapter<ItemAdapter.MyViewHolder>() {
 

@@ -4,7 +4,7 @@
     <data>
         <variable
             name="model"
-            type="com.nobel.dhar.offer.persistence.Item" />
+            type="com.nobel.dhar.offer.persistence.entities.Item" />
     </data>
     <androidx.cardview.widget.CardView
         app:cardCornerRadius="15dp"

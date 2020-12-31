@@ -3,13 +3,12 @@ package com.nobel.dhar.offer.ui
 import android.os.Bundle
 import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.nobel.dhar.offer.R
-import com.nobel.dhar.offer.persistence.Food
+import com.nobel.dhar.offer.persistence.entities.Food
 import com.nobel.dhar.offer.ui.home.CustomClickListener
 import com.nobel.dhar.offer.ui.home.FoodListFragmentDirections
 import dagger.android.support.DaggerAppCompatActivity

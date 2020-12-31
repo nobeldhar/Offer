@@ -1,4 +1,4 @@
-package com.nobel.dhar.offer.persistence
+package com.nobel.dhar.offer.persistence.entities
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
@@ -32,7 +32,9 @@ class Food(
     @ColumnInfo(name = "description")
     val description: String,
     @ColumnInfo(name = "offer_image")
-    val offer_image: String
+    val offer_image: String,
+    @ColumnInfo(name = "items")
+    val items: List<Item>
 ){
 
 }

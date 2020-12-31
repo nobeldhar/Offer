@@ -24,10 +24,6 @@ import javax.inject.Inject
 
 class FoodDetailsFragment : DaggerFragment() {
 
-    companion object {
-        fun newInstance() = FoodDetailsFragment()
-    }
-
     private val TAG: String? = FoodDetailsFragment::class.simpleName
     val args: FoodDetailsFragmentArgs by navArgs()
     private lateinit var binding: FoodDetailsFragmentBinding
@@ -42,7 +38,7 @@ class FoodDetailsFragment : DaggerFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = DataBindingUtil.inflate<FoodDetailsFragmentBinding>(inflater,R.layout.food_details_fragment, container,false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.food_details_fragment, container,false)
 
         navController = NavHostFragment.findNavController(this)
         binding.collapsingToolbarLayout.setupWithNavController(binding.toolbar, navController)

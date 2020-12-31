@@ -1,6 +1,5 @@
 package com.nobel.dhar.offer.ui.home
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -8,10 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nobel.dhar.offer.BR
 import com.nobel.dhar.offer.R
 import com.nobel.dhar.offer.databinding.FoodRowBinding
-import com.nobel.dhar.offer.persistence.Food
-import com.nobel.dhar.offer.persistence.FoodWithItems
+import com.nobel.dhar.offer.persistence.entities.Food
+import com.nobel.dhar.offer.persistence.entities.FoodWithItems
 
-class FoodAdapter (val foodList: List<FoodWithItems>, val listener: CustomClickListener):
+class FoodAdapter (val foodList: List<Food>, val listener: CustomClickListener):
     RecyclerView.Adapter<FoodAdapter.MyViewHolder>() {
     private val TAG: String? = FoodAdapter::class.simpleName
 
@@ -26,7 +25,7 @@ class FoodAdapter (val foodList: List<FoodWithItems>, val listener: CustomClickL
 
     override fun onBindViewHolder(holder: FoodAdapter.MyViewHolder, position: Int) {
         var currentFood = foodList.get(position)
-        holder.bind(currentFood.food)
+        holder.bind(currentFood)
     }
     inner class MyViewHolder(val binding: FoodRowBinding, val listener: CustomClickListener) : RecyclerView.ViewHolder(binding.root) {
 
